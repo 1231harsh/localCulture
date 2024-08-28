@@ -1,9 +1,13 @@
 # Use a base image with JDK 21
-FROM openjdk:21-jdk-slim
+FROM maven:3.8.6-openjdk-17 as build
 
 # Set the working directory in the container
 WORKDIR /app
+COPY pom.xml .
+COPY src ./src
+RUN mvn package -DskipTests
 
+FROM openjdk:21-jdk-slim
 # Copy the Maven build output (JAR file) to the container
 COPY --from=build /app/target/*.jar /app/localculture.jar
 
