@@ -8,10 +8,10 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface StoreRepository extends JpaRepository<Store, Long> {
-    @Query(value = "SELECT id, name, latitude, longitude, " +
+    @Query(value = "SELECT  id,address, store_name, latitude, longitude,phone_number, " +
             "(6371 * acos(cos(radians(:userLat)) * cos(radians(latitude)) * cos(radians(longitude) - radians(:userLng)) + " +
             "sin(radians(:userLat)) * sin(radians(latitude)))) AS distance " +
-            "FROM stores " +
+            "FROM store " +
             "HAVING distance < :radius " +
             "ORDER BY distance", nativeQuery = true)
     List<Store> findNearbyStores(@Param("userLat") double userLat,
