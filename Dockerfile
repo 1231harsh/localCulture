@@ -8,6 +8,7 @@ COPY src ./src
 RUN mvn package -DskipTests
 
 FROM openjdk:21-jdk-slim
+WORKDIR /app
 # Copy the Maven build output (JAR file) to the container
 COPY --from=build /app/target/*.jar /app/localculture.jar
 
