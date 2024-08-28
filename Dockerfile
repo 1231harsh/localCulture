@@ -1,4 +1,4 @@
-FROM maven:3.8.6-openjdk-17 AS builder
+FROM openjdk:17-jdk-oraclelinux8
 
 # Set the working directory in the container
 WORKDIR /app
