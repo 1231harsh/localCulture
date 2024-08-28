@@ -1,10 +1,11 @@
-# Use a base image with JDK 21
-FROM eclipse-temurin:11-jdk as builder
+FROM maven:3.8.6-openjdk-17 AS builder
 
 # Set the working directory in the container
 WORKDIR /app
 COPY pom.xml .
 COPY src ./src
+
+# Run Maven to build the package
 RUN mvn package -DskipTests
 
 FROM openjdk:21-jdk-slim
