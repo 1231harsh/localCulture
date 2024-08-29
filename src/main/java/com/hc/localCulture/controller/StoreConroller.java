@@ -16,6 +16,11 @@ public class StoreConroller {
     @Autowired
     private StoreService storeService;
 
+    @GetMapping("/test")
+    public ResponseEntity<String> test() {
+        return new ResponseEntity<>("Working",HttpStatus.OK);
+    }
+
     @GetMapping("/store")
     public ResponseEntity<List<Store>> getStores (@RequestParam("lat") double lat, @RequestParam("lng") double lng) {
         double radius=5;
