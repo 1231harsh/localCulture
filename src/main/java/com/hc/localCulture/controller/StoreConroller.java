@@ -24,7 +24,7 @@ public class StoreConroller {
     @GetMapping("/store")
     public ResponseEntity<List<Store>> getStores (@RequestParam("lat") double lat, @RequestParam("lng") double lng) {
         double radius=5;
-       List<Store>  listOfStores = storeService.findNearbyStores(lat, lng,radius);
+        List<Store>  listOfStores = storeService.findNearbyStores(lat, lng,radius);
         return new ResponseEntity<>(listOfStores, HttpStatus.OK);
     }
 }

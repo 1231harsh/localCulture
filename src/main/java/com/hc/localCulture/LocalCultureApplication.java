@@ -9,5 +9,4 @@ public class LocalCultureApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(LocalCultureApplication.class, args);
 	}
-
 }
