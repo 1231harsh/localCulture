@@ -68,6 +68,7 @@ public class MySecurityConfig {
         config.setAllowCredentials(true);
         config.addAllowedOrigin("https://handsome-spontaneity-production.up.railway.app");
         config.addAllowedOrigin("https://sih-last.vercel.app");
+        config.addAllowedOrigin("http://localhost:3000");
         config.addAllowedHeader("*");
         config.addAllowedMethod("*");
         source.registerCorsConfiguration("/**", config);
