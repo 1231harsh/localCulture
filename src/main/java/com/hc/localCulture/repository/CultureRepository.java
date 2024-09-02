@@ -10,7 +10,7 @@ import java.util.List;
 
 public interface CultureRepository extends JpaRepository<Culture, Long> {
 
-    @Query(value = "SELECT id, name, description, latitude, longitude, " +
+    @Query(value = "SELECT id, name, description, latitude, longitude,image_url, " +
             "(6371 * acos(cos(radians(:userLat)) * cos(radians(latitude)) * cos(radians(longitude) - radians(:userLng)) + " +
             "sin(radians(:userLat)) * sin(radians(latitude)))) AS distance " +
             "FROM culture " +

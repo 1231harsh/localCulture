@@ -18,4 +18,5 @@ public class Culture {
     private String description;
     private Double latitude;
     private Double longitude;
+    private String imageUrl;
 }
